@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .card{
+            width: 200px;
+            padding: 20px;
+            font-family: sans-serif;
+            border: 1px solid;
+            border-radius: 7px;
+            display: inline-block;
+            justify-content: space-between;
+        }
+        .card-text{
+            flex: 1;
+            padding-left: 20px;
+            box-sizing: border-box;
+        }
+        .card h3, .card h4{
+            margin: 0;
+        }
+        .card p{
+            margin: 20px 0;
+        }
+        .card img{
+            width: 70px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather on day:</h1>
+    <div id="cards"></div>
+    <script type="text/babel">
+        class Card_M extends React.Component{
+            render(){
+                return(<div className='card'>
+                <img src="ico1.ico" alt='Text'/>
+                <div className='card-text'>
+                    <h2>Morning</h2>
+                    <p  className='Possible precipitation'>Вероятность выпадения осадков: 43%</p>
+                    <img src="ico2.ico" alt='Text'/>
+                    <h4 className='Temperature'>- 1 Degrees</h4>    
+                </div>
+            </div>)
+            }
+        }
+
+        class Card_D extends React.Component{
+            render(){
+                return(<div className='card'>
+                <img src="ico1.ico" alt='Text'/>
+                <div className='card-text'>
+                    <h2>Day</h2>
+                    <p  className='Possible precipitation'>Вероятность выпадения осадков: 19%</p>
+                    <img src="ico3.ico" alt='Text'/>
+                    <h4 className='Temperature'>+ 3 Degrees</h4>    
+                </div>
+            </div>)
+            }
+        }
+
+        class Card_E extends React.Component{
+            render(){
+                return(<div className='card'>
+                <img src="ico1.ico" alt='Text'/>
+                <div className='card-text'>
+                    <h2>Evening</h2>
+                    <p  className='Possible precipitation'>Вероятность выпадения осадков: 88%</p>
+                    <img src="ico2.ico" alt='Text'/>
+                    <h4 className='Temperature'>- 5 Degrees</h4>    
+                </div>
+            </div>)
+            }
+        }
+
+        class Card_N extends React.Component{
+            render(){
+                return(<div className='card'>
+                <img src="ico1.ico" alt='Text'/>
+                <div className='card-text'>
+                    <h2>Night</h2>
+                    <p  className='Possible precipitation'>Вероятность выпадения осадков: 4%</p>
+                    <img src="ico2.ico" alt='Text'/>
+                    <h4 className='Temperature'>- 10 Degrees</h4>    
+                </div>
+            </div>)
+            }
+        }
+
+
+        ReactDOM.render(
+            <div>
+                <Card_M/>
+                <Card_D/> 
+                <Card_E/>
+                <Card_N/>   
+            </div>,
+            document.getElementById('cards')
+        )
+    </script>
+</body>
+</html>
